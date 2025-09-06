@@ -1,6 +1,5 @@
-### login request to retrieve token
-
-POST localhost:4004/auth/login
+### Login Request to retrieve a token
+POST http://lb-372c9725.elb.localhost.localstack.cloud:4004/auth/login
 Content-Type: application/json
 
 {
@@ -8,7 +7,4 @@ Content-Type: application/json
   "password": "password123"
 }
 
-> {%  client.global.set("token",response.body.token) %}
-
-
-###
+> {% client.global.set("token", response.body.token) %}
